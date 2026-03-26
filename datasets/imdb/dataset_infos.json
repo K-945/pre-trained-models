@@ -1,0 +1,1 @@
+{"plain_text": {"features": {"text": {"_type": "Value"}, "label": {"_type": "Value"}}, "splits": {"train": {"name": "train", "dataset_name": "imdb"}, "test": {"name": "test", "dataset_name": "imdb"}, "unsupervised": {"name": "unsupervised", "dataset_name": "imdb"}}}}
