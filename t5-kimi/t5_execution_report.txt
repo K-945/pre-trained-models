@@ -1,0 +1,76 @@
+
+T5 (Text-to-Text Transfer Transformer) 执行报告
+================================================================================
+
+1. 模型配置
+   - 架构: Encoder-Decoder Transformer
+   - 模型规模: T5-Nano
+   - d_model: 256
+   - d_ff: 1024
+   - num_layers: 2
+   - num_heads: 4
+   - vocab_size: 3000
+   - 总参数量: 4,441,216
+
+2. 核心特性实现
+   ✓ 相对位置偏置 (Relative Position Bias)
+   ✓ Pre-norm (Layer Norm 在残差块之前)
+   ✓ 无偏置线性层
+   ✓ Text-to-Text 统一框架
+   ✓ Span Corruption 预训练目标
+
+3. 预训练阶段 (C4)
+   - 数据集: Small C4
+   - 训练步数: 100
+   - Batch Size: 32
+   - 平均损失: 16.3139
+   - 用时: 325.66 秒
+
+4. 微调阶段 (SQuAD)
+   - 训练样本: 2000
+   - 验证样本: 300
+   - Epochs: 2
+   - 最终 Exact Match: 0.00%
+   - 最终 F1 Score: 0.00%
+   - 用时: 200.77 秒
+
+5. 总用时
+   - 预训练: 325.66 秒
+   - 微调: 200.77 秒
+   - 总计: 526.43 秒 (8.77 分钟)
+
+6. 训练历史
+   Epoch | Train Loss | Val EM (%) | Val F1 (%)
+   ------|------------|------------|------------
+       1 |     8.7231 |       0.00 |       0.00
+       2 |     6.8402 |       0.00 |       0.00
+
+7. 预测示例
+
+   示例 1:
+   输入: questionwhichnflteamrepresentedtheafcatsuperbowl50contextsuperbowl50wasanamerica...
+   预测: 
+   真实: Denver Broncos
+
+   示例 2:
+   输入: questionwhichnflteamrepresentedthenfcatsuperbowl50contextsuperbowl50wasanamerica...
+   预测: 
+   真实: Carolina Panthers
+
+   示例 3:
+   输入: questionwheredidsuperbowl50takeplacecontextsuperbowl50wasanamericanfootballgamet...
+   预测: 
+   真实: Santa Clara, California
+
+   示例 4:
+   输入: questionwhichnflteamwonsuperbowl50contextsuperbowl50wasanamericanfootballgametod...
+   预测: 
+   真实: Denver Broncos
+
+   示例 5:
+   输入: questionwhatcolorwasusedtoemphasizethe50thanniversaryofthesuperbowlcontextsuperb...
+   预测: 
+   真实: gold
+
+================================================================================
+执行完成!
