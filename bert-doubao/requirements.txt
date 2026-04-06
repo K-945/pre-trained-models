@@ -1,0 +1,5 @@
+# BERT项目依赖
+torch>=1.10.0
+tqdm>=4.64.0
+scikit-learn>=1.0.0
+numpy>=1.21.0
